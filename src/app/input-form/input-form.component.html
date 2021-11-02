@@ -1,0 +1,18 @@
+<div class="d-flex w-100">
+  <div class="mx-3 w-100">
+    <h2>Input Form</h2>
+
+    <div *ngFor="let inputGroup of formControlGroup">
+      <app-form-elem [inputGroup]="inputGroup"></app-form-elem>
+    </div>
+  </div>
+
+  <div class="mx-3 w-100">
+    <app-mirror-form [formGroupData]="formControlGroup"></app-mirror-form>
+  </div>
+</div>
+
+<div>
+  <h3>Form Value</h3>
+  {{inputForm.value | json}}
+</div>

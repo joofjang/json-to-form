@@ -1,0 +1,15 @@
+<div class="py-3">
+  <h2>Form Schema Input</h2>
+
+  <div class="mb-3">
+    <textarea class="form-control" rows="20"
+              [(ngModel)]="formSchemaString"></textarea>
+  </div>
+  <button type="button" class="btn btn-primary"
+          (click)="parseForm()">Parse Form
+  </button>
+
+  <div *ngIf="errorMsg" class="alert alert-danger my-3" role="alert">
+    Cannot parse string to json: {{errorMsg}}
+  </div>
+</div>

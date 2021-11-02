@@ -1,0 +1,8 @@
+<div>
+  <h2>Mirror Data</h2>
+  <div>
+    <ng-container *ngFor="let form of formGroupData">
+      <app-form-elem [inputGroup]="form" [idPrefix]="'mirror'"></app-form-elem>
+    </ng-container>
+  </div>
+</div>

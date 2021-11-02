@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormMetaData} from "./form-meta-data.interface";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontis-test';
+
+  formSchema: FormMetaData[] = []
+
+  passFormSchema(newFormSchema: FormMetaData[]) {
+    this.formSchema = newFormSchema
+  }
 }

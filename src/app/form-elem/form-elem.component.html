@@ -1,0 +1,16 @@
+<ng-container *ngIf="inputGroup" [ngSwitch]="inputGroup.type">
+
+    <div class="mb-3" *ngSwitchCase="'text'">
+      <label [for]="idPrefix + inputGroup.id" class="form-label">{{inputGroup.id | titlecase}}</label>
+      <input type="text" class="form-control" [id]="idPrefix + inputGroup.id"
+             [formControl]="inputGroup.formControl">
+    </div>
+
+    <div *ngSwitchCase="'radio'" class="form-check">
+      <input type="radio" class="form-check-input" [id]="idPrefix + inputGroup.id+inputGroup.value"
+             [name]="inputGroup.id" [value]="inputGroup.value"
+             [formControl]="inputGroup.formControl">
+      <label [for]="idPrefix + inputGroup.id+inputGroup.value" class="form-check-label">{{inputGroup.value | titlecase}}</label>
+    </div>
+
+</ng-container>
