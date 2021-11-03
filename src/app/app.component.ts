@@ -7,7 +7,7 @@ import {FormMetaData} from "./form-meta-data.interface";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontis-test';
+  title = 'json-to-form';
 
   formSchema: FormMetaData[] = []
 
