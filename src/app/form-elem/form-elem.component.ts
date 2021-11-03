@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormMetaData} from "../form-meta-data.interface";
-import {FormGroupData} from "../input-form/form-group-data.interface";
+import {FormGroupData} from "../form-group-data.interface";
 
 @Component({
   selector: 'app-form-elem',

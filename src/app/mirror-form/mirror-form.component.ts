@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormGroupData} from "../input-form/form-group-data.interface";
+import {FormGroupData} from "../form-group-data.interface";
 
 @Component({
   selector: 'app-mirror-form',
