@@ -6,11 +6,14 @@
              [formControl]="inputGroup.formControl">
     </div>
 
-    <div *ngSwitchCase="'radio'" class="form-check">
-      <input type="radio" class="form-check-input" [id]="idPrefix + inputGroup.id+inputGroup.value"
-             [name]="inputGroup.id" [value]="inputGroup.value"
-             [formControl]="inputGroup.formControl">
-      <label [for]="idPrefix + inputGroup.id+inputGroup.value" class="form-check-label">{{inputGroup.value | titlecase}}</label>
+    <div *ngSwitchCase="'radio'" class="mb-3">
+      <div class="mb-2">{{inputGroup.id | titlecase}}</div>
+      <div *ngFor="let radioValue of inputGroup.value" class="form-check">
+        <input type="radio" class="form-check-input" [id]="idPrefix + inputGroup.id + radioValue"
+               [name]="inputGroup.id" [value]="radioValue"
+               [formControl]="inputGroup.formControl">
+        <label [for]="idPrefix + inputGroup.id + radioValue" class="form-check-label">{{radioValue | titlecase}}</label>
+      </div>
     </div>
 
 </ng-container>

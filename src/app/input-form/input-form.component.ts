@@ -43,10 +43,8 @@ export class InputFormComponent implements OnChanges, OnDestroy {
           break;
         case 'radio':
           if (this.inputForm.contains(form.id)) {
-            this.formControlGroup.push({
-              ...form,
-              formControl: this.inputForm.get(form.id)! as FormControl,
-            });
+            const existingFormControlGroup = this.formControlGroup.find(fcg => fcg.id === form.id);
+            existingFormControlGroup && (existingFormControlGroup.value as any[]).push(form.value);
             break;
           }
           newControl = new FormControl("")
@@ -54,6 +52,7 @@ export class InputFormComponent implements OnChanges, OnDestroy {
           this.inputForm.addControl(form.id, newControl);
           this.formControlGroup.push({
             ...form,
+            value: [form.value],
             formControl: newControl,
           });
           break;
